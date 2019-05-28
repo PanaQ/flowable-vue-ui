@@ -20,11 +20,14 @@ import './permission' // permission control
 import './mock' // simulation data
 
 import * as filters from './filters' // global filters
+import FormMaking from 'form-making' // 表单设计器
+import 'form-making/dist/FormMaking.css'
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
 })
+Vue.use(FormMaking)
 
 // register global utility filters.
 Object.keys(filters).forEach(key => {

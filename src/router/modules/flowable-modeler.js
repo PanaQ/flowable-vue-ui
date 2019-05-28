@@ -19,12 +19,33 @@ const modelerRouter = {
       name: 'casemodels',
       meta: { title: 'casemodels', icon: 'example', root: 'modeler', page: 'casemodels' }
     },
+
+    // {
+    //   path: 'forms',
+    //   component: () => import('@/views/flowable/index'),
+    //   name: 'forms',
+    //   meta: { title: 'forms', icon: 'form', root: 'modeler', page: 'forms' }
+    // },
+
     {
       path: 'forms',
-      component: () => import('@/views/flowable/index'),
+      component: () => import('@/views/form/index'),
       name: 'forms',
       meta: { title: 'forms', icon: 'form', root: 'modeler', page: 'forms' }
     },
+    {// 查看
+      path: 'showindex',
+      component: () => import('@/views/form/showindex'),
+      name: 'showindex',
+      meta: { title: 'showindex', icon: 'form', root: 'modeler', page: 'showindex' }
+    },
+    {// 新建
+      path: 'newforms/:type',
+      component: () => import('@/views/newform/index'),
+      name: 'newforms',
+      meta: { title: 'newforms', icon: 'form', root: 'modeler', page: 'newforms' }
+    },
+
     {
       path: 'decision-tables',
       component: () => import('@/views/flowable/index'),

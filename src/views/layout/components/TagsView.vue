@@ -99,6 +99,7 @@ export default {
       })
     },
     closeSelectedTag(view) {
+      console.log(view)
       this.$store.dispatch('delView', view).then(({ visitedViews }) => {
         if (this.isActive(view)) {
           const latestView = visitedViews.slice(-1)[0]
