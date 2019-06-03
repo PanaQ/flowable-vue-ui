@@ -23,6 +23,9 @@ var pathweb = "/flowable-idm";
 
 FLOWABLE.CONFIG = {
 	'onPremise' : true,
+  // 'contextRoot' : '',
+  // 'webContextRoot' : '',
+  // 'serviceRoot' : '',
   'contextRoot' : path,
   'webContextRoot' : path,
   'serviceRoot' : pathweb,

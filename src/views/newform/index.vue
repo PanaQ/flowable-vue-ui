@@ -1,7 +1,7 @@
 <template>
   <div class="newform-container">
     <div class="form-title">
-      <span>创建表单</span>
+      <span>修改表单</span>
 
       <button
         class="btn"
@@ -17,6 +17,7 @@
       <el-form-item
         label="表单名称"
         required
+        disabled
       >
         <el-input
           v-model="form.name"
@@ -25,7 +26,7 @@
       </el-form-item>
 
       <el-form-item
-        v-show="typeshow"
+
         label="绑定的模型"
         required
       >
@@ -64,10 +65,10 @@ export default {
   data() {
     return {
       form: {
-        name: '',
+        name: '学生信息表',
         model: ''
       },
-      model: [],
+      model: [{ name: '学生工作流程', id: '001' }, { name: '仓库管理', id: '002' }, { name: '进货系统', id: '003' }],
       typeshow: false
 
     }

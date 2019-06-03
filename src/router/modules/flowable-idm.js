@@ -1,6 +1,6 @@
 
 import Layout from '@/views/layout/Layout'
-
+// 权限管理
 const idmRouter = {
   path: '/flowable-idm',
   component: Layout,

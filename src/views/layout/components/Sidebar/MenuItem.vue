@@ -1,4 +1,5 @@
 <template>
+  <!-- 侧边栏展开后 对每一个li的操作 -->
   <li
     :style="[paddingStyle, itemStyle, { backgroundColor }]"
     :class="{

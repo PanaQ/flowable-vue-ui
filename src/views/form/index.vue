@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { modelList } from '../../api/flowable'
+// import { modelList } from '../../api/flowable'
 
 export default {
   data() {
@@ -101,10 +101,26 @@ export default {
     },
 
     getmodelList() {
-      modelList().then(response => {
-        console.log(response.data)
-        this.model = response.data.data
-      })
+      // modelList().then(response => {
+      //   console.log(response.data)
+      //   this.model = response.data.data
+      // })
+      this.model = [{
+        name: '学生信息',
+        lastUpdated: '20190519_14:21'
+
+      }, {
+        name: '表单二',
+        lastUpdated: '20190520_10:02'
+      },
+      {
+        name: '表单三',
+        lastUpdated: '20190527_11:02'
+      },
+      {
+        name: '表单四',
+        lastUpdated: '20190527_11:02'
+      }]
     }
   }
 }
@@ -183,7 +199,7 @@ export default {
         margin:10px 15px;
 
         i.el-icon-search{
-          margin-left:200px;
+          margin-left:100px;
         }
         i{
           margin-right: 20px;

@@ -1,6 +1,6 @@
 
 import Layout from '@/views/layout/Layout'
-
+// 模型管理
 const modelerRouter = {
   path: '/flowable-modeler',
   component: Layout,
@@ -33,18 +33,24 @@ const modelerRouter = {
       name: 'forms',
       meta: { title: 'forms', icon: 'form', root: 'modeler', page: 'forms' }
     },
-    {// 查看
-      path: 'showindex',
-      component: () => import('@/views/form/showindex'),
-      name: 'showindex',
-      meta: { title: 'showindex', icon: 'form', root: 'modeler', page: 'showindex' }
-    },
-    {// 新建
-      path: 'newforms/:type',
-      component: () => import('@/views/newform/index'),
-      name: 'newforms',
-      meta: { title: 'newforms', icon: 'form', root: 'modeler', page: 'newforms' }
-    },
+
+    // {// 查看
+    //   path: 'showindex',
+    //   component: () => import('@/views/form/showindex'),
+    //   name: 'showindex',
+    //   hide: true,
+    //   alwaysShow: false,
+    //   meta: { title: 'showindex', icon: 'form', root: 'modeler', page: 'showindex' }
+    // },
+    // {// 新建
+    //   path: 'newforms/:type',
+    //   component: () => import('@/views/newform/index'),
+    //   name: 'newforms',
+    //   hide: true,
+    //   alwaysShow: false,
+
+    //   meta: { title: 'newforms', icon: 'form', root: 'modeler', page: 'newforms' }
+    // },
 
     {
       path: 'decision-tables',

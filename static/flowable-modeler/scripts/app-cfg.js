@@ -23,8 +23,14 @@ var pathweb = "/flowable-modeler";
 
 FLOWABLE.CONFIG = {
 	'onPremise' : true,
+  // 'contextRoot' : '',
 	'contextRoot' : path,
+
+  // 'webContextRoot' : '',
 	'webContextRoot' : path,
+
+  // 'serviceRoot' : '',
   'serviceRoot' : pathweb,
+
 	'datesLocalization' : false
 };

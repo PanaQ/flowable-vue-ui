@@ -1,4 +1,5 @@
 <template>
+  <!-- 侧边栏的显示 -->
   <div v-if="!item.hidden" class="menu-wrapper">
     <template>
       <menu-item
@@ -13,7 +14,7 @@
 
 <script>
 import path from 'path'
-import { Message } from 'element-ui'
+// import { Message } from 'element-ui'
 import { generateTitle } from '@/utils/i18n'
 import { isExternal } from '@/utils'
 import MenuItem from './MenuItem'
@@ -80,6 +81,7 @@ export default {
       return isExternal(routePath)
     },
     toggleRemove(item) {
+      console.log('sidebaritem-----' + item)
       this.$store.dispatch('removeFavorites', { name: item.name, path: item.path })
     },
     generateTitle

@@ -168,7 +168,9 @@ if (config.build.generateAnalyzerReport || config.build.bundleAnalyzerReport) {
   if (config.build.bundleAnalyzerReport) {
     webpackConfig.plugins.push(
       new BundleAnalyzerPlugin({
-        analyzerPort: 8080,
+        // analyzerPort: 8080,
+        analyzerPort: 9000,
+
         generateStatsFile: false
       })
     )

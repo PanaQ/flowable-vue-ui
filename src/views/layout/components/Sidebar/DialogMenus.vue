@@ -1,19 +1,21 @@
 <template>
   <div class="product-category-list-wrapper">
     <div class="sidebar-product-category-group">
-      <div v-for="item in getHasChild" class="sidebar-product-category-group-item">
-        <h5>{{ getTitle(item) }}</h5>
+      <div v-for="(item,index) in getHasChild" :key="index" class="sidebar-product-category-group-item">
+        <h5 :key="index">{{ getTitle(item) }}</h5>
+
         <ul>
-          <li v-for="child in item.children">
-            <app-link :to="child.path">
+          <li v-for="(child,index) in item.children" :key="child">
+            <app-link :to="child.path" :key="index">
               {{ getTitle(child) }}
             </app-link>
             <span class="sidebar-icon-star-wrapper">
-              <i v-if="checkStart(child)" class="el-icon-star-on" @click="toggleUnStart(child,item)"></i>
-              <i v-else class="el-icon-star-off" @click="toggleStart(child,item)"></i>
+              <i v-if="checkStart(child)" class="el-icon-star-on" @click="toggleUnStart(child,item)"/>
+              <i v-else class="el-icon-star-off" @click="toggleStart(child,item)"/>
             </span>
           </li>
         </ul>
+
       </div>
     </div>
   </div>
@@ -21,13 +23,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { Message } from 'element-ui'
+// import { Message } from 'element-ui'
 import { childToParent } from '@/utils/'
 import { getI18nTitle } from '@/utils/i18n'
 import AppLink from './Link'
 
 export default {
-  name: 'dialog-menus',
+  name: 'DialogMenus',
   components: { AppLink },
   data() {
     return {
@@ -43,6 +45,7 @@ export default {
       return this.permission_routers.filter(item => !item.children && !item.hide)
     },
     getHasChild() {
+      console.log(this.permission_routers)
       return this.permission_routers.filter(item => item.children && !item.hide)
     }
   },
@@ -83,11 +86,12 @@ export default {
     },
     toggleStart(item, parent) {
       // path meta name
-      const path = parent.path + '/'+item.path
-      this.$store.dispatch('addFavorites', {name: item.name, path, meta: item.meta})
+      console.log('1111--' + item)
+      const path = parent.path + '/' + item.path
+      this.$store.dispatch('addFavorites', { name: item.name, path, meta: item.meta })
     },
     toggleUnStart(item, parent) {
-      this.$store.dispatch('removeFavorites', {name: item.name, path: item.path, meta: item.meta})
+      this.$store.dispatch('removeFavorites', { name: item.name, path: item.path, meta: item.meta })
     }
   }
 }

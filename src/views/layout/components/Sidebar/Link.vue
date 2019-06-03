@@ -1,5 +1,6 @@
 
 <template>
+  <!-- 显示路由跳转 -->
   <!-- eslint-disable vue/require-component-is-->
   <component v-bind="linkProps(to)">
     <slot/>

@@ -8,8 +8,9 @@
     @blur="handleClickOutside"
   >
     <div class="logo-wrapper">
-      <img :src="getLogo"/>
+      <img :src="getLogo">
     </div>
+
     <div class="all-menu-wrapper menu-wrapper el-menu-item">
       <a @click="isShown=!isShown">
         <svg-icon icon-class="list" />
@@ -21,6 +22,7 @@
         </span>
       </span>
     </div>
+
     <el-scrollbar>
       <el-menu
         :show-timeout="200"
@@ -50,31 +52,34 @@
       width="50%"
       top="10px"
     >
-      <dialog-menus></dialog-menus>
+      <dialog-menus/>
     </el-dialog>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import draggable from 'vuedraggable'
 import { generateTitle } from '@/utils/i18n'
+
+import draggable from 'vuedraggable'
+
 import SidebarItem from './SidebarItem'
 import DialogMenus from './DialogMenus'
 
 export default {
-  data () {
+  components: { SidebarItem, draggable, DialogMenus },
+  data() {
     return {
       isShown: false
     }
   },
-  components: { SidebarItem, draggable, DialogMenus },
   computed: {
     ...mapGetters([
       'permission_routers',
       'sidebar'
     ]),
     isCollapse() {
+      // 控制侧边栏的开关
       return !this.sidebar.opened
     },
     asideWidth() {
@@ -88,6 +93,7 @@ export default {
   },
   mounted() {
     // console.log(this.permission_routers, this.sidebar.favorites)
+    console.log(this.sidebar)
   },
   methods: {
     handleClickOutside(e) {

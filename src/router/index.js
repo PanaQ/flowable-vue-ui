@@ -36,6 +36,14 @@ export const constantRouterMap = [
     meta: { name: 'login', anonymousAuthorize: true }
   },
   {
+    path: '/home',
+    name: 'home',
+    hide: true,
+    // redirect: 'home',
+    component: () => import('@/views/home/index'),
+    meta: { title: 'home', icon: 'home' }
+  },
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/authredirect'),
     meta: { title: 'auth-redirect', anonymousAuthorize: true }
@@ -54,20 +62,20 @@ export const constantRouterMap = [
     component: () => import('@/views/errorPage/401'),
     meta: { title: '401', anonymousAuthorize: true }
   },
-  {
-    path: '',
-    component: Layout,
-    redirect: 'dashboard',
-    children: [
-      {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
-        name: 'dashboard',
-        alwaysShow: true,
-        meta: { title: 'dashboard', icon: 'dashboard' }
-      }
-    ]
-  },
+  // {
+  //   path: '',
+  //   component: Layout,
+  //   redirect: 'dashboard',
+  //   children: [
+  //     {
+  //       path: 'dashboard',
+  //       component: () => import('@/views/dashboard/index'),
+  //       name: 'dashboard',
+  //       alwaysShow: true,
+  //       meta: { title: 'dashboard', icon: 'dashboard' }
+  //     }
+  //   ]
+  // },
 
   taskRouter,
 
